@@ -6,33 +6,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== existing styles unchanged ===== */
 :root{
   --blue:#0c3d73;
-  --blue2:#143e7a;
+  --blue-dark:#243b55;
   --red:#b11226;
-  --bg:#f3f3f3;
   --border:#dcdcdc;
-  --text:#1c1c1c;
 }
 
+/* RESET */
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   background:#fff;
-  color:var(--text);
+  color:#1c1c1c;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   background:#fff;
   border-bottom:1px solid var(--border);
 }
 .header-wrap{
-  max-width:1250px;
+  max-width:1320px;
   margin:auto;
-  padding:12px 20px;
+  padding:14px 24px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -42,53 +40,73 @@ header{
   align-items:center;
   gap:12px;
 }
-.brand img{
-  width:46px;
-}
+.brand img{width:48px}
 .brand span{
+  font-size:22px;
   font-weight:700;
-  font-size:20px;
   color:var(--blue);
 }
 nav a{
   margin-left:22px;
-  font-size:14px;
-  color:#123;
+  font-size:15px;
   text-decoration:none;
+  color:#123;
+  padding:8px 12px;
+}
+nav a.active{
+  border:2px solid var(--blue);
+  border-radius:4px;
+  font-weight:600;
 }
 
-/* HERO + LOGIN */
+/* ================= HERO + LOGIN ================= */
 .top{
-  max-width:1250px;
-  margin:25px auto;
-  padding:0 20px;
+  max-width:1320px;
+  margin:28px auto;
+  padding:0 24px;
   display:grid;
-  grid-template-columns:2.1fr 1fr;
-  gap:22px;
+  grid-template-columns:2.2fr 1fr;
+  gap:26px;
 }
 
+/* HERO */
 .hero{
+  min-height:320px;
   background:
-    linear-gradient(rgba(16,45,80,.92),rgba(16,45,80,.85)),
+    linear-gradient(90deg, rgba(36,59,85,.92), rgba(36,59,85,.82)),
     url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
   background-size:cover;
   background-position:center;
-  color:#fff;
-  padding:40px;
   border-radius:6px;
+  color:#fff;
+  padding:48px;
+}
+.hero h1{
+  font-size:34px;
+  margin-top:0;
+}
+.hero p{
+  font-size:15.5px;
+  line-height:1.7;
+  max-width:560px;
 }
 
+/* ================= LOGIN CARD ================= */
 .card{
   background:#fff;
   border-radius:6px;
-  padding:22px;
-  box-shadow:0 4px 14px rgba(0,0,0,.1);
+  padding:26px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+.card h2{
+  margin-top:0;
+  color:var(--blue);
 }
 
 label{
   display:block;
-  margin-top:14px;
-  font-size:13px;
+  margin-top:16px;
+  font-size:14px;
   font-weight:600;
 }
 input{
@@ -99,88 +117,92 @@ input{
   font-size:14px;
 }
 
+/* LOGIN BUTTON – matches real site */
 .login-btn{
-  margin-top:18px;
+  margin-top:22px;
   width:100%;
-  padding:11px;
-  background:#b11226;
-  color:#fff;
-  border:none;
-  font-weight:600;
+  padding:12px;
+  background:#fff;
+  color:var(--red);
+  border:2px solid var(--red);
+  font-weight:700;
   cursor:pointer;
+}
+.login-btn:hover{
+  background:var(--red);
+  color:#fff;
 }
 
 .forgot{
   float:right;
-  margin-top:8px;
+  margin-top:10px;
   font-size:13px;
   color:#555;
   text-decoration:none;
 }
 
 .error{
-  margin-top:10px;
+  margin-top:12px;
   font-size:13px;
-  color:#b11226;
+  color:var(--red);
 }
-
 .hidden{display:none}
 
 .result-box{
-  margin-top:15px;
+  margin-top:16px;
   text-align:center;
 }
 .result-box a{
   display:inline-block;
   margin-top:10px;
-  padding:10px 16px;
+  padding:10px 18px;
   background:var(--blue);
   color:#fff;
   text-decoration:none;
   border-radius:4px;
 }
 
-/* PANELS + FOOTER (unchanged) */
-.bottom{
-  max-width:1250px;
-  margin:20px auto 40px;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-}
-
-.panel{
-  border:1px solid var(--border);
-  border-radius:6px;
-  overflow:hidden;
-}
-.panel h3{
-  background:var(--blue2);
-  color:#fff;
-  padding:12px 15px;
-  margin:0;
-}
-
+/* ================= FOOTER ================= */
 footer{
-  background:#f2f2f2;
-  border-top:1px solid var(--border);
+  margin-top:60px;
+  background:#f3f3f3;
+  border-top:1px solid #ddd;
 }
 .footer-wrap{
-  max-width:1250px;
+  max-width:1320px;
   margin:auto;
-  padding:35px 20px;
+  padding:40px 24px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:25px;
+  gap:28px;
+}
+footer h4{
+  color:var(--red);
+  font-size:17px;
+  margin-bottom:12px;
+}
+footer li{
+  list-style:none;
+  font-size:14px;
+  margin:6px 0;
 }
 .contact{
   grid-column:1/-1;
-  margin-top:20px;
+  margin-top:24px;
+  border-top:1px solid #ccc;
+  padding-top:18px;
+  font-size:14px;
+}
+.footer-bottom{
+  background:#e0e0e0;
+  text-align:center;
+  font-size:13px;
+  padding:12px;
 }
 
-@media(max-width:950px){
-  .top,.bottom{grid-template-columns:1fr}
+/* ================= RESPONSIVE ================= */
+@media(max-width:980px){
+  .top{grid-template-columns:1fr}
   nav{display:none}
 }
 </style>
@@ -191,13 +213,13 @@ footer{
 <header>
   <div class="header-wrap">
     <div class="brand">
-      <img src="logo.png" alt="Consortium of NLUs Logo">
+      <img src="logo.png">
       <span>Consortium of NLUs</span>
     </div>
     <nav>
       <a href="#">Under Graduate</a>
       <a href="#">Post Graduate</a>
-      <a href="#">Participating Universities</a>
+      <a href="#" class="active">Participating Universities</a>
       <a href="#">Affiliates</a>
       <a href="#">Help Desk</a>
       <a href="#">FAQs</a>
@@ -208,11 +230,18 @@ footer{
 <section class="top">
   <div class="hero">
     <h1>Welcome to CLAT 2026</h1>
-    <p>Official result portal of the Consortium of National Law Universities.</p>
+    <p>
+      The Common Law Admission Test (CLAT) is a national level admission test for
+      admissions to undergraduate (UG) and postgraduate (PG) law programmes offered
+      by 25 National Law Universities in India.
+    </p>
+    <p>
+      All admissions to the 5-year integrated LL.B. and LL.M. programmes commencing
+      in the Academic Year 2026–2027 shall be through CLAT 2026.
+    </p>
   </div>
 
-  <!-- LOGIN CARD -->
-  <div class="card" id="loginCard">
+  <div class="card">
     <h2>Login</h2>
 
     <form id="loginForm">
@@ -230,7 +259,6 @@ footer{
       </div>
     </form>
 
-    <!-- RESULT (hidden until success) -->
     <div id="resultSection" class="hidden">
       <p><b>Login successful.</b> Your CLAT 2026 scorecard is ready.</p>
       <div class="result-box">
@@ -240,26 +268,53 @@ footer{
   </div>
 </section>
 
+<footer>
+  <div class="footer-wrap">
+    <div>
+      <h4>Quick links</h4>
+      <li>History</li><li>Objectives</li><li>Bye-Laws</li>
+    </div>
+    <div>
+      <h4>Under Graduate</h4>
+      <li>Eligibility</li><li>Syllabus & Guide</li>
+    </div>
+    <div>
+      <h4>Post Graduate</h4>
+      <li>Eligibility</li><li>Syllabus & Guide</li>
+    </div>
+    <div>
+      <h4>Other Important Links</h4>
+      <li>CLAT 2025</li><li>Previous Year Score Card</li>
+    </div>
+
+    <div class="contact">
+      📍 P.O. Bag 7201, Nagarbhavi, Bangalore – 560072 |
+      📧 clat@consortiumofnlus.ac.in |
+      📞 08047162020
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © Consortium of NLUs | Powered by EDCHEMY
+  </div>
+</footer>
+
 <script>
 function handleLogin(e){
   e.preventDefault();
+  const u=document.getElementById("username").value.trim();
+  const p=document.getElementById("password").value;
+  const err=document.getElementById("errorMsg");
+  const res=document.getElementById("resultSection");
 
-  const user = document.getElementById("username").value.trim();
-  const pass = document.getElementById("password").value;
-
-  const error = document.getElementById("errorMsg");
-  const result = document.getElementById("resultSection");
-
-  if(user === "7980791103" && pass === "rishab25"){
-    error.classList.add("hidden");
-    result.classList.remove("hidden");
-  } else {
-    result.classList.add("hidden");
-    error.classList.remove("hidden");
+  if(u==="7980791103" && p==="rishab25"){
+    err.classList.add("hidden");
+    res.classList.remove("hidden");
+  }else{
+    res.classList.add("hidden");
+    err.classList.remove("hidden");
   }
 }
-
-document.getElementById("loginForm").addEventListener("submit", handleLogin);
+document.getElementById("loginForm").addEventListener("submit",handleLogin);
 </script>
 
 </body>
