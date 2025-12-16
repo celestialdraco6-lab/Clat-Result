@@ -2,351 +2,202 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CLAT 2026 | Consortium of NLUs</title>
+<title>CLAT 2026 | Result Portal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
-  --blue:#0c3d73;
-  --blue2:#143e7a;
-  --red:#b11226;
-  --bg:#f3f3f3;
-  --border:#dcdcdc;
-  --text:#1c1c1c;
+/* ===== existing look preserved ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#fff;
-  color:var(--text);
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
 }
 
-/* ================= HEADER ================= */
-header{
-  background:#fff;
-  border-bottom:1px solid var(--border);
-}
-.header-wrap{
-  max-width:1250px;
-  margin:auto;
-  padding:12px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.brand img{
-  width:46px;
-  height:46px;
-}
-.brand span{
-  font-weight:700;
-  font-size:20px;
-  color:var(--blue);
-}
-nav a{
-  margin-left:22px;
-  font-size:14px;
-  color:#123;
-  text-decoration:none;
-}
-nav a:hover{color:var(--red)}
-
-/* ================= HERO + LOGIN ================= */
-.top{
-  max-width:1250px;
-  margin:25px auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:2.1fr 1fr;
-  gap:22px;
+.header-wrap {
+  max-width: 1250px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* HERO */
-.hero{
-  background:
-    linear-gradient(rgba(16,45,80,.92),rgba(16,45,80,.85)),
-    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
-  background-size:cover;
-  background-position:center;
-  color:#fff;
-  padding:40px;
-  border-radius:6px;
-}
-.hero h1{
-  margin-top:0;
-  font-size:30px;
-}
-.hero p{
-  font-size:15px;
-  line-height:1.65;
-  max-width:560px;
+.header-wrap img {
+  width: 48px;
+  height: auto;
 }
 
-/* LOGIN CARD */
-.card{
-  background:#fff;
-  border-radius:6px;
-  padding:22px;
-  box-shadow:0 4px 14px rgba(0,0,0,.1);
-}
-.card h2{
-  margin-top:0;
-  color:var(--blue);
-}
-label{
-  display:block;
-  margin-top:14px;
-  font-size:13px;
-  font-weight:600;
-}
-input{
-  width:100%;
-  margin-top:6px;
-  padding:10px;
-  border:1px solid var(--border);
-  font-size:14px;
-}
-.login-btn{
-  margin-top:18px;
-  width:100%;
-  padding:11px;
-  background:#fff;
-  border:2px solid var(--red);
-  color:var(--red);
-  font-weight:600;
-  cursor:pointer;
-}
-.login-btn:hover{
-  background:var(--red);
-  color:#fff;
-}
-.forgot{
-  float:right;
-  margin-top:8px;
-  font-size:13px;
-  color:#555;
-  text-decoration:none;
+.header-wrap span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0c3d73;
 }
 
-/* HELP CARD */
-.help{
-  margin-top:18px;
-  text-align:center;
-}
-.help h3{
-  color:var(--red);
-  margin-bottom:8px;
-}
-.help p{
-  margin:6px 0;
-  font-size:14px;
+.main {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 20px;
 }
 
-/* ================= PANELS ================= */
-.bottom{
-  max-width:1250px;
-  margin:20px auto 40px;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
+.card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
 }
 
-.panel{
-  border:1px solid var(--border);
-  border-radius:6px;
-  overflow:hidden;
-}
-.panel h3{
-  background:var(--blue2);
-  color:#fff;
-  margin:0;
-  padding:12px 15px;
-  font-size:16px;
-}
-.panel ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-}
-.panel li{
-  padding:12px 15px;
-  font-size:14px;
-  border-bottom:1px solid var(--border);
-}
-.panel li:last-child{border-bottom:none}
-.panel li.red{color:var(--red)}
-
-/* IMPORTANT EVENTS */
-.event{
-  display:grid;
-  grid-template-columns:70px 1fr;
-  align-items:center;
-}
-.date{
-  background:var(--red);
-  color:#fff;
-  text-align:center;
-  padding:10px 0;
-  font-weight:700;
+.card h2 {
+  margin-top: 0;
+  color: #0c3d73;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  background:#f2f2f2;
-  border-top:1px solid var(--border);
-}
-.footer-wrap{
-  max-width:1250px;
-  margin:auto;
-  padding:35px 20px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-}
-footer h4{
-  color:var(--red);
-  margin-bottom:10px;
-}
-footer li{
-  list-style:none;
-  font-size:14px;
-  margin:6px 0;
-}
-.contact{
-  grid-column:1 / -1;
-  margin-top:20px;
-  font-size:14px;
-}
-.copyright{
-  background:#ddd;
-  text-align:center;
-  font-size:13px;
-  padding:12px;
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:950px){
-  .top,.bottom{grid-template-columns:1fr}
-  nav{display:none}
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 11px;
+  background: #b11226;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #8f0e1f;
+}
+
+.error {
+  margin-top: 12px;
+  color: #b11226;
+  font-size: 13px;
+}
+
+.success {
+  margin-top: 10px;
+  color: #0c3d73;
+  font-size: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-box {
+  margin-top: 25px;
+  padding: 18px;
+  background: #f5f7fa;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.result-box a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #0c3d73;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- ===== HEADER WITH LOGO ===== -->
 <header>
   <div class="header-wrap">
-    <div class="brand">
-      <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Consortium_of_NLUs_logo.png">
-      <span>Consortium of NLUs</span>
-    </div>
-    <nav>
-      <a href="#">Under Graduate</a>
-      <a href="#">Post Graduate</a>
-      <a href="#">Participating Universities</a>
-      <a href="#">Affiliates</a>
-      <a href="#">Help Desk</a>
-      <a href="#">FAQs</a>
-    </nav>
+    <img src="logo.png" alt="Consortium of NLUs Logo">
+    <span>Consortium of NLUs – CLAT 2026 Result</span>
   </div>
 </header>
 
-<section class="top">
-  <div class="hero">
-    <h1>Welcome to CLAT 2026</h1>
-    <p>
-      The Common Law Admission Test (CLAT) is a national level admission test for
-      admissions to undergraduate (UG) and postgraduate (PG) law programmes offered
-      by 25 National Law Universities in India.
-    </p>
-    <p>
-      CLAT is organized by the Consortium of National Law Universities, comprising
-      representative universities. Several affiliate universities and organisations
-      also use the CLAT exam for admissions and recruitment respectively.
-    </p>
-    <p>
-      All admissions to the 5-year integrated LL.B. and LL.M. programmes commencing
-      in the Academic Year 2026–2027 shall be through the CLAT 2026.
-    </p>
-  </div>
+<div class="main">
 
-  <div>
-    <div class="card">
-      <h2>Login</h2>
-      <label>Mobile No</label>
-      <input value="7980791103">
+  <!-- ===== LOGIN CARD ===== -->
+  <div id="loginCard" class="card">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <label>Username / Mobile Number</label>
+      <input type="text" id="username" required>
+
       <label>Password</label>
-      <input type="password" value="password">
-      <a class="forgot" href="#">Forgot Password?</a>
-      <button class="login-btn">LOGIN</button>
-    </div>
+      <input type="password" id="password" required>
 
-    <div class="card help">
-      <h3>Have a question? Reach us on</h3>
-      <p>📧 clat@consortiumofnlus.ac.in</p>
-      <p>📞 08047162020</p>
-    </div>
-  </div>
-</section>
+      <button type="submit">LOGIN</button>
 
-<section class="bottom">
-  <div class="panel">
-    <h3>Notifications</h3>
-    <ul>
-      <li class="red">CLAT 2026 Result</li>
-      <li class="red">Final Answer Key</li>
-      <li class="red">Objections to Question Paper and Provisional Answer Key</li>
-      <li class="red">Press Release – 7th Dec 2025</li>
-    </ul>
+      <div id="errorMsg" class="error hidden">
+        Invalid credentials. Please check your mobile number/username and password.
+      </div>
+    </form>
   </div>
 
-  <div class="panel">
-    <h3>Important Events</h3>
-    <ul>
-      <li class="event"><div class="date">1<br>Aug</div><div>Applications Open</div></li>
-      <li class="event"><div class="date">7<br>Nov</div><div>Last Date for receiving applications</div></li>
-      <li class="event"><div class="date">7<br>Dec</div><div>CLAT 2026 Exam Date</div></li>
-    </ul>
-  </div>
-</section>
+  <!-- ===== RESULT SECTION ===== -->
+  <div id="resultSection" class="card hidden">
+    <h2>CLAT 2026 Result</h2>
 
-<footer>
-  <div class="footer-wrap">
-    <div>
-      <h4>Quick links</h4>
-      <li>History</li><li>Objectives</li><li>Bye-Laws</li>
-    </div>
-    <div>
-      <h4>Under Graduate</h4>
-      <li>Eligibility</li><li>Syllabus & Guide</li>
-    </div>
-    <div>
-      <h4>Post Graduate</h4>
-      <li>Eligibility</li><li>Syllabus & Guide</li>
-    </div>
-    <div>
-      <h4>Other Important Links</h4>
-      <li>CLAT 2025</li><li>Previous Year Score Card</li>
+    <div class="success">
+      Login successful. Your CLAT 2026 scorecard is ready.
     </div>
 
-    <div class="contact">
-      📍 P.O. Bag 7201, Nagarbhavi, Bangalore – 560072, India |
-      ⏰ 10:00 am – 05:00 pm (Working days)
+    <div class="result-box">
+      <a href="CLAT_2026.pdf" target="_blank">
+        View Scorecard (PDF)
+      </a>
     </div>
   </div>
 
-  <div class="copyright">
-    © Consortium of NLUs | Academic UI Clone
-  </div>
-</footer>
+</div>
+
+<!-- ===== LOGIN LOGIC ===== -->
+<script>
+function handleLogin(event) {
+  event.preventDefault(); // stop page reload
+
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+
+  const errorMsg = document.getElementById("errorMsg");
+  const loginCard = document.getElementById("loginCard");
+  const resultSection = document.getElementById("resultSection");
+
+  // EXACT VALIDATION CONDITIONS
+  if (username === "7980791103" && password === "rishab25") {
+    errorMsg.classList.add("hidden");
+    loginCard.classList.add("hidden");
+    resultSection.classList.remove("hidden");
+  } else {
+    errorMsg.classList.remove("hidden");
+  }
+}
+
+// attach handler
+document.getElementById("loginForm").addEventListener("submit", handleLogin);
+</script>
 
 </body>
 </html>
