@@ -17,9 +17,10 @@
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Inter, "Segoe UI", Arial, sans-serif;
   background:#fff;
   color:#1c1c1c;
+  line-height:1.6;
 }
 
 /* ================= HEADER ================= */
@@ -46,91 +47,128 @@ header{
   font-weight:700;
   color:var(--blue);
 }
+
+/* NAV */
 nav a{
   margin-left:22px;
   font-size:15px;
   text-decoration:none;
   color:#123;
-  padding:8px 12px;
+  padding:8px 4px;
+  position:relative;
+}
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:var(--blue);
+  transition:width .25s ease;
+}
+nav a:hover::after{
+  width:100%;
 }
 nav a.active{
-  border:2px solid var(--blue);
-  border-radius:4px;
   font-weight:600;
 }
 
 /* ================= HERO + LOGIN ================= */
 .top{
   max-width:1320px;
-  margin:28px auto;
+  margin:32px auto;
   padding:0 24px;
   display:grid;
   grid-template-columns:2.2fr 1fr;
-  gap:26px;
+  gap:28px;
 }
 
 /* HERO */
 .hero{
-  min-height:320px;
+  min-height:340px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   background:
-    linear-gradient(90deg, rgba(36,59,85,.92), rgba(36,59,85,.82)),
+    linear-gradient(90deg,
+      rgba(12,61,115,.95) 0%,
+      rgba(12,61,115,.85) 55%,
+      rgba(12,61,115,.6) 100%),
     url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
   background-size:cover;
   background-position:center;
-  border-radius:6px;
+  border-radius:8px;
   color:#fff;
-  padding:48px;
+  padding:52px;
 }
 .hero h1{
-  font-size:34px;
-  margin-top:0;
+  font-size:36px;
+  margin:0 0 12px;
+  letter-spacing:-0.4px;
 }
 .hero p{
   font-size:15.5px;
-  line-height:1.7;
-  max-width:560px;
+  max-width:540px;
+  opacity:.95;
 }
 
 /* ================= LOGIN CARD ================= */
 .card{
   background:#fff;
-  border-radius:6px;
-  padding:26px;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  border-radius:8px;
+  padding:32px;
+  box-shadow:0 10px 28px rgba(0,0,0,.12);
 }
 .card h2{
-  margin-top:0;
+  margin:0 0 6px;
   color:var(--blue);
+  font-size:22px;
 }
 
 label{
   display:block;
-  margin-top:16px;
+  margin-top:18px;
   font-size:14px;
   font-weight:600;
 }
 input{
   width:100%;
   margin-top:6px;
-  padding:10px;
+  padding:12px;
   border:1px solid var(--border);
   font-size:14px;
+  border-radius:4px;
+}
+input:focus{
+  outline:none;
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(12,61,115,.15);
 }
 
-/* LOGIN BUTTON – matches real site */
+/* LOGIN BUTTON */
 .login-btn{
   margin-top:22px;
   width:100%;
-  padding:12px;
+  padding:13px;
   background:#fff;
   color:var(--red);
   border:2px solid var(--red);
   font-weight:700;
   cursor:pointer;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .15s ease;
 }
 .login-btn:hover{
   background:var(--red);
   color:#fff;
+  transform:translateY(-1px);
+}
+.login-btn:disabled{
+  opacity:.7;
+  cursor:not-allowed;
 }
 
 .forgot{
@@ -142,29 +180,41 @@ input{
 }
 
 .error{
-  margin-top:12px;
+  margin-top:14px;
   font-size:13px;
   color:var(--red);
 }
 .hidden{display:none}
 
+/* RESULT */
+#resultSection{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+}
 .result-box{
-  margin-top:16px;
+  margin-top:12px;
   text-align:center;
 }
 .result-box a{
   display:inline-block;
-  margin-top:10px;
-  padding:10px 18px;
+  padding:11px 20px;
   background:var(--blue);
   color:#fff;
   text-decoration:none;
   border-radius:4px;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+.result-box a:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
 }
 
 /* ================= FOOTER ================= */
 footer{
-  margin-top:60px;
+  margin-top:64px;
   background:#f3f3f3;
   border-top:1px solid #ddd;
 }
@@ -205,6 +255,17 @@ footer li{
   .top{grid-template-columns:1fr}
   nav{display:none}
 }
+@media(max-width:640px){
+  .hero{
+    padding:34px 26px;
+  }
+  .hero h1{
+    font-size:28px;
+  }
+  .card{
+    padding:26px;
+  }
+}
 </style>
 </head>
 
@@ -213,7 +274,7 @@ footer li{
 <header>
   <div class="header-wrap">
     <div class="brand">
-      <img src="logo.png">
+      <img src="logo.png" alt="Consortium of NLUs">
       <span>Consortium of NLUs</span>
     </div>
     <nav>
@@ -232,12 +293,12 @@ footer li{
     <h1>Welcome to CLAT 2026</h1>
     <p>
       The Common Law Admission Test (CLAT) is a national level admission test for
-      admissions to undergraduate (UG) and postgraduate (PG) law programmes offered
-      by 25 National Law Universities in India.
+      undergraduate (UG) and postgraduate (PG) law programmes offered by
+      25 National Law Universities in India.
     </p>
     <p>
-      All admissions to the 5-year integrated LL.B. and LL.M. programmes commencing
-      in the Academic Year 2026–2027 shall be through CLAT 2026.
+      Admissions to the 5-year integrated LL.B. and LL.M. programmes for
+      Academic Year 2026–27 shall be through CLAT 2026.
     </p>
   </div>
 
@@ -259,10 +320,12 @@ footer li{
       </div>
     </form>
 
-    <div id="resultSection" class="hidden">
+    <div id="resultSection" class="hidden" tabindex="-1">
       <p><b>Login successful.</b> Your CLAT 2026 scorecard is ready.</p>
       <div class="result-box">
-        <a href="CLAT_2026.pdf" target="_blank">View Scorecard (PDF)</a>
+        <a href="CLAT_2026.pdf" target="_blank" rel="noopener">
+          View Scorecard (PDF)
+        </a>
       </div>
     </div>
   </div>
@@ -299,22 +362,43 @@ footer li{
 </footer>
 
 <script>
-function handleLogin(e){
-  e.preventDefault();
-  const u=document.getElementById("username").value.trim();
-  const p=document.getElementById("password").value;
-  const err=document.getElementById("errorMsg");
-  const res=document.getElementById("resultSection");
+const VALID_USER = "7980791103";
+const VALID_PASS = "rishab25";
 
-  if(u==="7980791103" && p==="rishab25"){
-    err.classList.add("hidden");
-    res.classList.remove("hidden");
-  }else{
-    res.classList.add("hidden");
-    err.classList.remove("hidden");
-  }
+const form = document.getElementById("loginForm");
+const loginBtn = form.querySelector(".login-btn");
+const errorMsg = document.getElementById("errorMsg");
+const resultSection = document.getElementById("resultSection");
+
+function setLoading(state){
+  loginBtn.disabled = state;
+  loginBtn.textContent = state ? "VERIFYING..." : "LOGIN";
 }
-document.getElementById("loginForm").addEventListener("submit",handleLogin);
+
+function showResult(){
+  resultSection.classList.remove("hidden");
+  resultSection.scrollIntoView({behavior:"smooth"});
+  resultSection.focus();
+}
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  setLoading(true);
+
+  setTimeout(() => {
+    const u = username.value.trim();
+    const p = password.value;
+
+    if(u === VALID_USER && p === VALID_PASS){
+      errorMsg.classList.add("hidden");
+      showResult();
+    }else{
+      resultSection.classList.add("hidden");
+      errorMsg.classList.remove("hidden");
+    }
+    setLoading(false);
+  }, 600);
+});
 </script>
 
 </body>
