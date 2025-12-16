@@ -2,109 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CLAT 2026 Result | Consortium of NLUs (Demo)</title>
+<title>CLAT 2026 | Result Portal (Academic Clone)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root {
-  --primary:#0b3c6f;
-  --secondary:#1e5fa3;
-  --bg:#f4f6f9;
+:root{
+  --blue:#0c3d73;
+  --blue-dark:#092f59;
+  --gray:#f2f4f7;
+  --border:#dcdcdc;
 }
-* { box-sizing:border-box; }
-body {
+
+*{box-sizing:border-box}
+
+body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:var(--bg);
-  color:#222;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#fff;
+  color:#1a1a1a;
 }
-header {
-  background:var(--primary);
+
+/* HEADER */
+header{
+  background:var(--blue);
   color:#fff;
-  padding:14px 20px;
+  padding:14px 30px;
 }
-.header-inner {
-  max-width:1100px;
+.header-wrap{
+  max-width:1200px;
   margin:auto;
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:16px;
 }
-.logo {
-  width:46px;height:46px;
+.logo{
+  width:48px;height:48px;
   background:#fff;
-  color:var(--primary);
-  font-weight:bold;
+  color:var(--blue);
+  font-weight:700;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:4px;
 }
-main {
-  max-width:900px;
-  margin:40px auto;
-  padding:20px;
+.header-text small{
+  opacity:.9;
 }
-.card {
+
+/* MAIN LAYOUT */
+.main{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  min-height:calc(100vh - 76px);
+}
+
+/* LEFT INFO PANEL */
+.left{
+  background:
+    linear-gradient(rgba(9,47,89,.88),rgba(9,47,89,.88)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  padding:50px;
+}
+.left h1{
+  margin-top:0;
+  font-size:30px;
+}
+.left p{
+  font-size:15px;
+  line-height:1.6;
+  max-width:520px;
+}
+
+/* RIGHT LOGIN */
+.right{
+  background:var(--gray);
+  padding:40px 30px;
+  display:flex;
+  align-items:flex-start;
+}
+.card{
   background:#fff;
-  border-radius:6px;
-  padding:25px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-h1,h2 {
-  color:var(--primary);
-}
-label {
-  display:block;
-  margin-top:14px;
-  font-weight:bold;
-  font-size:14px;
-}
-input {
   width:100%;
-  padding:10px;
-  margin-top:6px;
+  max-width:420px;
+  padding:28px;
+  border-radius:6px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+.card h2{
+  margin-top:0;
+  color:var(--blue);
+}
+
+/* FORM */
+label{
+  display:block;
+  margin-top:18px;
+  font-weight:600;
   font-size:14px;
 }
-button {
-  margin-top:20px;
-  background:var(--primary);
+input{
+  width:100%;
+  padding:11px;
+  margin-top:6px;
+  border:1px solid var(--border);
+  font-size:14px;
+}
+button{
+  margin-top:24px;
+  width:100%;
+  padding:12px;
+  background:var(--blue);
   color:#fff;
   border:none;
-  padding:12px 18px;
   font-size:14px;
   cursor:pointer;
-  border-radius:4px;
 }
-button:hover { background:var(--secondary); }
-.small {
+button:hover{
+  background:var(--blue-dark);
+}
+.link{
+  display:block;
+  margin-top:12px;
   font-size:13px;
-  color:#555;
+  color:var(--blue);
+  text-decoration:none;
 }
-.hidden { display:none; }
-.result-table {
+
+/* RESULT */
+.hidden{display:none}
+
+.result{
+  padding:40px;
+  max-width:900px;
+  margin:auto;
+}
+.result h2{
+  color:var(--blue);
+}
+.table{
   width:100%;
   border-collapse:collapse;
   margin-top:20px;
 }
-.result-table td {
-  border:1px solid #ddd;
+.table td{
+  border:1px solid var(--border);
   padding:10px;
   font-size:14px;
 }
-footer {
-  text-align:center;
+
+/* FOOTER NOTE */
+.note{
   font-size:12px;
   color:#555;
-  padding:20px;
+  margin-top:25px;
 }
-.demo-tag {
-  background:#ffe9c7;
-  color:#7a4a00;
-  padding:10px;
-  font-size:13px;
-  border-left:4px solid #f0a500;
-  margin-bottom:20px;
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .main{grid-template-columns:1fr}
+  .left{display:none}
 }
 </style>
 </head>
@@ -112,77 +171,83 @@ footer {
 <body>
 
 <header>
-  <div class="header-inner">
+  <div class="header-wrap">
     <div class="logo">CNLU</div>
-    <div>
+    <div class="header-text">
       <strong>Consortium of National Law Universities</strong><br>
       <small>CLAT 2026 Result Portal</small>
     </div>
   </div>
 </header>
 
-<main>
+<div class="main">
 
-<div class="demo-tag">
-⚠ This is a <strong>demo / mock result page</strong> created for educational or portfolio purposes only.
+  <!-- LEFT -->
+  <div class="left">
+    <h1>Welcome to CLAT 2026</h1>
+    <p>
+      The Common Law Admission Test (CLAT) is a national-level entrance
+      examination conducted for admissions to undergraduate and postgraduate
+      law programmes offered by National Law Universities in India.
+    </p>
+    <p>
+      All admissions to the 5-year integrated LL.B. and LL.M. programmes
+      commencing in the Academic Year 2026–27 shall be through CLAT 2026.
+    </p>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+
+    <!-- LOGIN -->
+    <div id="login" class="card">
+      <h2>Login</h2>
+
+      <label>Application Number</label>
+      <input id="app">
+
+      <label>Date of Birth</label>
+      <input type="date" id="dob">
+
+      <label>Captcha Code</label>
+      <input placeholder="ABX92">
+
+      <button onclick="login()">LOGIN</button>
+      <a href="#" class="link">Forgot Password?</a>
+    </div>
+
+    <!-- RESULT -->
+    <div id="result" class="card hidden">
+      <h2>CLAT 2026 Result</h2>
+
+      <table class="table">
+        <tr><td><b>Name</b></td><td>Rishab Pandey</td></tr>
+        <tr><td><b>Roll Number</b></td><td>307711087</td></tr>
+        <tr><td><b>Application No</b></td><td>U260116055</td></tr>
+        <tr><td><b>Category</b></td><td>General</td></tr>
+        <tr><td><b>Total Marks</b></td><td><b>58.25</b></td></tr>
+        <tr><td><b>AIR</b></td><td><b>22381</b></td></tr>
+      </table>
+
+      <button onclick="window.print()">Download Scorecard</button>
+
+      <div class="note">
+        Academic UI clone only. No real data is used.
+      </div>
+    </div>
+
+  </div>
 </div>
-
-<!-- LOGIN -->
-<div id="login" class="card">
-  <h2>Candidate Login</h2>
-
-  <label>Application Number</label>
-  <input id="app" placeholder="Enter Application Number">
-
-  <label>Date of Birth</label>
-  <input id="dob" type="date">
-
-  <label>Captcha Code</label>
-  <input placeholder="ABX92 (demo)">
-
-  <button onclick="login()">Login</button>
-  <p class="small"><a href="#">Forgot Password?</a></p>
-</div>
-
-<!-- RESULT -->
-<div id="result" class="card hidden">
-  <h2>CLAT 2026 Result</h2>
-
-  <table class="result-table">
-    <tr><td><b>Name</b></td><td>Rishab Pandey</td></tr>
-    <tr><td><b>Father’s Name</b></td><td>Rajesh Pandey</td></tr>
-    <tr><td><b>Roll Number</b></td><td>307711087</td></tr>
-    <tr><td><b>Application Number</b></td><td>U260116055</td></tr>
-    <tr><td><b>Category</b></td><td>General</td></tr>
-
-    <tr><td><b>English</b></td><td>14.25</td></tr>
-    <tr><td><b>GK & Current Affairs</b></td><td>11.50</td></tr>
-    <tr><td><b>Legal Reasoning</b></td><td>16.00</td></tr>
-    <tr><td><b>Logical Reasoning</b></td><td>9.00</td></tr>
-    <tr><td><b>Quantitative Techniques</b></td><td>7.50</td></tr>
-
-    <tr><td><b>Total Marks</b></td><td><b>58.25</b></td></tr>
-    <tr><td><b>All India Rank (AIR)</b></td><td><b>22381</b></td></tr>
-    <tr><td><b>Category Rank</b></td><td>10542</td></tr>
-    <tr><td><b>NRI Rank</b></td><td>—</td></tr>
-  </table>
-
-  <button onclick="window.print()">Download Scorecard (PDF)</button>
-</div>
-
-</main>
-
-<footer>
-© 2025 Consortium of National Law Universities (Demo Mockup)
-</footer>
 
 <script>
-function login() {
-  if (document.getElementById("app").value && document.getElementById("dob").value) {
-    document.getElementById("login").classList.add("hidden");
-    document.getElementById("result").classList.remove("hidden");
+function login(){
+  if(app.value && dob.value){
+    loginBox = document.getElementById("login");
+    resultBox = document.getElementById("result");
+    loginBox.classList.add("hidden");
+    resultBox.classList.remove("hidden");
   } else {
-    alert("Please enter valid credentials (demo).");
+    alert("Enter valid details");
   }
 }
 </script>
