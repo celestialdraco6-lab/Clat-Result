@@ -1,1 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CLAT 2026 | Consortium of National Law Universities</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f6f9;
+        color: #222;
+        line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+        background: #0b3c6f;
+        color: #fff;
+    }
+
+    .topbar {
+        max-width: 1200px;
+        margin: auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo .mark {
+        width: 48px;
+        height: 48px;
+        background: #ffffff;
+        color: #0b3c6f;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.95;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+        background: linear-gradient(135deg, #0b3c6f, #1e5fa3);
+        color: #fff;
+        padding: 60px 20px;
+    }
+
+    .hero-inner {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        max-width: 720px;
+        font-size: 16px;
+        opacity: 0.95;
+    }
+
+    .hero-actions {
+        margin-top: 25px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        background: #ffffff;
+        color: #0b3c6f;
+        padding: 12px 22px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .btn.secondary {
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    /* Main Content */
+    main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 6px;
+        padding: 22px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+        margin-top: 0;
+        color: #0b3c6f;
+        font-size: 18px;
+    }
+
+    .dates {
+        font-size: 14px;
+    }
+
+    .dates strong {
+        display: block;
+        margin-top: 8px;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    section h2 {
+        color: #0b3c6f;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    ul.clean {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    ul.clean li {
+        padding: 6px 0;
+        font-size: 14px;
+    }
+
+    ul.clean li::before {
+        content: "• ";
+        color: #0b3c6f;
+        font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+        background: #0b3c6f;
+        color: #fff;
+        padding: 30px 20px;
+        font-size: 13px;
+    }
+
+    .footer-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    footer h4 {
+        margin-top: 0;
+        font-size: 15px;
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="topbar">
+        <div class="logo">
+            <div class="mark">CNLU</div>
+            <div>
+                <strong>Consortium of National Law Universities</strong><br>
+                <small>Common Law Admission Test</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">UG Instructions</a></li>
+                <li><a href="#">PG Instructions</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Participating Universities</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <h1>CLAT 2026</h1>
+        <p>
+            Applications are invited for the Common Law Admission Test (CLAT) 2026.
+            Check eligibility criteria, entrance examination details, important dates,
+            and instructions for admission to Undergraduate and Postgraduate Law programmes
+            offered by National Law Universities.
+        </p>
+        <div class="hero-actions">
+            <a href="#" class="btn">Register Now</a>
+            <a href="#" class="btn secondary">Login</a>
+            <a href="#" class="btn secondary">Download Notification</a>
+        </div>
+    </div>
+</section>
+
+<main>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Examination Schedule</h3>
+            <div class="dates">
+                <strong>Exam Date</strong>
+                December 7, 2025<br>
+                (Offline Mode)<br>
+                2:00 PM – 4:00 PM
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Application Timeline</h3>
+            <div class="dates">
+                <strong>Application Opens</strong>
+                August 1, 2025
+                <strong>Application Closes</strong>
+                October / November 2025 (as notified)
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Programmes Offered</h3>
+            <div class="dates">
+                Undergraduate (UG)<br>
+                Postgraduate (PG)
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <h2>Undergraduate Programme (UG)</h2>
+        <p>
+            Admission to the five-year integrated undergraduate law programmes offered by
+            participating National Law Universities is conducted through CLAT 2026.
+        </p>
+        <ul class="clean">
+            <li>10+2 or equivalent examination</li>
+            <li>Minimum qualifying marks as prescribed</li>
+            <li>No upper age limit</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Postgraduate Programme (PG)</h2>
+        <p>
+            Admission to the one-year LL.M. programmes of National Law Universities
+            is through CLAT PG 2026.
+        </p>
+        <ul class="clean">
+            <li>LL.B. degree or equivalent</li>
+            <li>Minimum qualifying marks as prescribed</li>
+            <li>Indian and eligible foreign nationals</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Important Links</h2>
+        <ul class="clean">
+            <li><a href="#">Information Brochure</a></li>
+            <li><a href="#">Press Releases</a></li>
+            <li><a href="#">Exam Pattern & Syllabus</a></li>
+            <li><a href="#">Admit Card (when available)</a></li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>
+            <h4>Consortium of NLUs</h4>
+            <p>
+                The Consortium of National Law Universities conducts the Common Law Admission Test (CLAT)
+                for admissions to UG and PG law programmes.
+            </p>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>
+                Email: helpdesk@consortiumofnlus.ac.in<br>
+                Phone: +91-XXXXXXXXXX
+            </p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <p>
+                <a href="#">Notifications</a><br>
+                <a href="#">FAQs</a><br>
+                <a href="#">Participating NLUs</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2025 Consortium of National Law Universities.  
+        This page is a static mockup for demonstration purposes only.
+    </div>
+</footer>
+
+</body>
+</html>
