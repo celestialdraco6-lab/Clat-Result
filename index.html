@@ -2,38 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CLAT 2026 | Consortium of NLUs (UI Clone)</title>
+<title>CLAT 2026 | Consortium of NLUs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ---------- ROOT ---------- */
 :root{
-  --blue:#0b3c6f;
-  --blue-dark:#082f57;
+  --blue:#0c3d73;
+  --blue2:#143e7a;
   --red:#b11226;
-  --light:#f5f7fa;
-  --border:#d9d9d9;
-  --text:#1a1a1a;
+  --bg:#f3f3f3;
+  --border:#dcdcdc;
+  --text:#1c1c1c;
 }
 
 *{box-sizing:border-box}
-
 body{
   margin:0;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#fff;
   color:var(--text);
 }
 
-/* ---------- HEADER ---------- */
+/* ================= HEADER ================= */
 header{
   background:#fff;
   border-bottom:1px solid var(--border);
 }
-.header-inner{
-  max-width:1200px;
+.header-wrap{
+  max-width:1250px;
   margin:auto;
-  padding:14px 20px;
+  padding:12px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -43,40 +41,37 @@ header{
   align-items:center;
   gap:12px;
 }
-.logo{
+.brand img{
   width:46px;
   height:46px;
-  border-radius:50%;
-  background:#fff;
-  border:2px solid var(--red);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+}
+.brand span{
   font-weight:700;
-  color:var(--red);
+  font-size:20px;
+  color:var(--blue);
 }
 nav a{
   margin-left:22px;
-  text-decoration:none;
-  color:#123;
   font-size:14px;
+  color:#123;
+  text-decoration:none;
 }
-nav a:hover{text-decoration:underline}
+nav a:hover{color:var(--red)}
 
-/* ---------- MAIN GRID ---------- */
-.main{
-  max-width:1200px;
-  margin:30px auto;
+/* ================= HERO + LOGIN ================= */
+.top{
+  max-width:1250px;
+  margin:25px auto;
   padding:0 20px;
   display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:25px;
+  grid-template-columns:2.1fr 1fr;
+  gap:22px;
 }
 
-/* ---------- HERO LEFT ---------- */
+/* HERO */
 .hero{
   background:
-    linear-gradient(90deg, rgba(11,60,111,.92), rgba(11,60,111,.75)),
+    linear-gradient(rgba(16,45,80,.92),rgba(16,45,80,.85)),
     url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
   background-size:cover;
   background-position:center;
@@ -86,20 +81,20 @@ nav a:hover{text-decoration:underline}
 }
 .hero h1{
   margin-top:0;
-  font-size:28px;
+  font-size:30px;
 }
 .hero p{
-  font-size:14.5px;
-  line-height:1.7;
-  max-width:520px;
+  font-size:15px;
+  line-height:1.65;
+  max-width:560px;
 }
 
-/* ---------- LOGIN CARD ---------- */
+/* LOGIN CARD */
 .card{
   background:#fff;
   border-radius:6px;
-  padding:24px;
-  box-shadow:0 3px 12px rgba(0,0,0,.1);
+  padding:22px;
+  box-shadow:0 4px 14px rgba(0,0,0,.1);
 }
 .card h2{
   margin-top:0;
@@ -107,68 +102,140 @@ nav a:hover{text-decoration:underline}
 }
 label{
   display:block;
-  margin-top:16px;
-  font-weight:600;
+  margin-top:14px;
   font-size:13px;
+  font-weight:600;
 }
 input{
   width:100%;
-  padding:10px;
   margin-top:6px;
+  padding:10px;
   border:1px solid var(--border);
   font-size:14px;
 }
-button{
-  margin-top:22px;
+.login-btn{
+  margin-top:18px;
   width:100%;
   padding:11px;
   background:#fff;
-  color:var(--red);
   border:2px solid var(--red);
+  color:var(--red);
   font-weight:600;
   cursor:pointer;
 }
-button:hover{
+.login-btn:hover{
   background:var(--red);
   color:#fff;
 }
-.link{
-  display:block;
-  margin-top:12px;
+.forgot{
+  float:right;
+  margin-top:8px;
   font-size:13px;
-  color:var(--blue);
+  color:#555;
   text-decoration:none;
-  text-align:right;
 }
 
-/* ---------- PANELS ---------- */
+/* HELP CARD */
+.help{
+  margin-top:18px;
+  text-align:center;
+}
+.help h3{
+  color:var(--red);
+  margin-bottom:8px;
+}
+.help p{
+  margin:6px 0;
+  font-size:14px;
+}
+
+/* ================= PANELS ================= */
+.bottom{
+  max-width:1250px;
+  margin:20px auto 40px;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
 .panel{
-  margin-top:25px;
   border:1px solid var(--border);
   border-radius:6px;
+  overflow:hidden;
 }
 .panel h3{
+  background:var(--blue2);
+  color:#fff;
   margin:0;
   padding:12px 15px;
-  background:var(--blue);
-  color:#fff;
-  font-size:15px;
+  font-size:16px;
 }
 .panel ul{
   list-style:none;
   margin:0;
-  padding:10px 15px;
+  padding:0;
 }
 .panel li{
-  padding:8px 0;
+  padding:12px 15px;
   font-size:14px;
   border-bottom:1px solid var(--border);
 }
 .panel li:last-child{border-bottom:none}
+.panel li.red{color:var(--red)}
 
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-  .main{grid-template-columns:1fr}
+/* IMPORTANT EVENTS */
+.event{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  align-items:center;
+}
+.date{
+  background:var(--red);
+  color:#fff;
+  text-align:center;
+  padding:10px 0;
+  font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#f2f2f2;
+  border-top:1px solid var(--border);
+}
+.footer-wrap{
+  max-width:1250px;
+  margin:auto;
+  padding:35px 20px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+footer h4{
+  color:var(--red);
+  margin-bottom:10px;
+}
+footer li{
+  list-style:none;
+  font-size:14px;
+  margin:6px 0;
+}
+.contact{
+  grid-column:1 / -1;
+  margin-top:20px;
+  font-size:14px;
+}
+.copyright{
+  background:#ddd;
+  text-align:center;
+  font-size:13px;
+  padding:12px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:950px){
+  .top,.bottom{grid-template-columns:1fr}
+  nav{display:none}
 }
 </style>
 </head>
@@ -176,10 +243,10 @@ button:hover{
 <body>
 
 <header>
-  <div class="header-inner">
+  <div class="header-wrap">
     <div class="brand">
-      <div class="logo">C</div>
-      <strong>Consortium of NLUs</strong>
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Consortium_of_NLUs_logo.png">
+      <span>Consortium of NLUs</span>
     </div>
     <nav>
       <a href="#">Under Graduate</a>
@@ -192,60 +259,94 @@ button:hover{
   </div>
 </header>
 
-<div class="main">
-
-  <!-- LEFT -->
-  <div>
-    <div class="hero">
-      <h1>Welcome to CLAT 2026</h1>
-      <p>
-        The Common Law Admission Test (CLAT) is a national level admission test for
-        admissions to undergraduate (UG) and postgraduate (PG) law programmes
-        offered by National Law Universities in India.
-      </p>
-      <p>
-        CLAT is organized by the Consortium of National Law Universities comprising
-        representative universities. All admissions to the 5-year integrated LL.B.
-        and LL.M. programmes commencing in the Academic Year 2026–27 shall be
-        through CLAT 2026.
-      </p>
-    </div>
-
-    <div class="panel">
-      <h3>Notifications</h3>
-      <ul>
-        <li>CLAT 2026 Result</li>
-        <li>Final Answer Key</li>
-        <li>Objections to Question Paper</li>
-      </ul>
-    </div>
+<section class="top">
+  <div class="hero">
+    <h1>Welcome to CLAT 2026</h1>
+    <p>
+      The Common Law Admission Test (CLAT) is a national level admission test for
+      admissions to undergraduate (UG) and postgraduate (PG) law programmes offered
+      by 25 National Law Universities in India.
+    </p>
+    <p>
+      CLAT is organized by the Consortium of National Law Universities, comprising
+      representative universities. Several affiliate universities and organisations
+      also use the CLAT exam for admissions and recruitment respectively.
+    </p>
+    <p>
+      All admissions to the 5-year integrated LL.B. and LL.M. programmes commencing
+      in the Academic Year 2026–2027 shall be through the CLAT 2026.
+    </p>
   </div>
 
-  <!-- RIGHT -->
   <div>
     <div class="card">
       <h2>Login</h2>
-
       <label>Mobile No</label>
-      <input>
-
+      <input value="7980791103">
       <label>Password</label>
-      <input type="password">
-
-      <a class="link" href="#">Forgot Password?</a>
-      <button>LOGIN</button>
+      <input type="password" value="password">
+      <a class="forgot" href="#">Forgot Password?</a>
+      <button class="login-btn">LOGIN</button>
     </div>
 
-    <div class="panel">
-      <h3>Important Events</h3>
-      <ul>
-        <li><b>1 Aug 2025</b> – Applications Open</li>
-        <li><b>7 Nov 2025</b> – Last Date to Apply</li>
-      </ul>
+    <div class="card help">
+      <h3>Have a question? Reach us on</h3>
+      <p>📧 clat@consortiumofnlus.ac.in</p>
+      <p>📞 08047162020</p>
+    </div>
+  </div>
+</section>
+
+<section class="bottom">
+  <div class="panel">
+    <h3>Notifications</h3>
+    <ul>
+      <li class="red">CLAT 2026 Result</li>
+      <li class="red">Final Answer Key</li>
+      <li class="red">Objections to Question Paper and Provisional Answer Key</li>
+      <li class="red">Press Release – 7th Dec 2025</li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <h3>Important Events</h3>
+    <ul>
+      <li class="event"><div class="date">1<br>Aug</div><div>Applications Open</div></li>
+      <li class="event"><div class="date">7<br>Nov</div><div>Last Date for receiving applications</div></li>
+      <li class="event"><div class="date">7<br>Dec</div><div>CLAT 2026 Exam Date</div></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-wrap">
+    <div>
+      <h4>Quick links</h4>
+      <li>History</li><li>Objectives</li><li>Bye-Laws</li>
+    </div>
+    <div>
+      <h4>Under Graduate</h4>
+      <li>Eligibility</li><li>Syllabus & Guide</li>
+    </div>
+    <div>
+      <h4>Post Graduate</h4>
+      <li>Eligibility</li><li>Syllabus & Guide</li>
+    </div>
+    <div>
+      <h4>Other Important Links</h4>
+      <li>CLAT 2025</li><li>Previous Year Score Card</li>
+    </div>
+
+    <div class="contact">
+      📍 P.O. Bag 7201, Nagarbhavi, Bangalore – 560072, India |
+      ⏰ 10:00 am – 05:00 pm (Working days)
     </div>
   </div>
 
-</div>
+  <div class="copyright">
+    © Consortium of NLUs | Academic UI Clone
+  </div>
+</footer>
 
 </body>
 </html>
