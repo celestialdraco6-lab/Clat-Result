@@ -2,126 +2,135 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CLAT 2026 | Result Portal (Academic Clone)</title>
+<title>CLAT 2026 | Consortium of NLUs (UI Clone)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* ---------- ROOT ---------- */
 :root{
-  --blue:#0c3d73;
-  --blue-dark:#092f59;
-  --gray:#f2f4f7;
-  --border:#dcdcdc;
+  --blue:#0b3c6f;
+  --blue-dark:#082f57;
+  --red:#b11226;
+  --light:#f5f7fa;
+  --border:#d9d9d9;
+  --text:#1a1a1a;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:Segoe UI, Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background:#fff;
-  color:#1a1a1a;
+  color:var(--text);
 }
 
-/* HEADER */
+/* ---------- HEADER ---------- */
 header{
-  background:var(--blue);
-  color:#fff;
-  padding:14px 30px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
 }
-.header-wrap{
+.header-inner{
   max-width:1200px;
   margin:auto;
+  padding:14px 20px;
   display:flex;
   align-items:center;
-  gap:16px;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 .logo{
-  width:48px;height:48px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
   background:#fff;
-  color:var(--blue);
-  font-weight:700;
+  border:2px solid var(--red);
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:4px;
+  font-weight:700;
+  color:var(--red);
 }
-.header-text small{
-  opacity:.9;
+nav a{
+  margin-left:22px;
+  text-decoration:none;
+  color:#123;
+  font-size:14px;
 }
+nav a:hover{text-decoration:underline}
 
-/* MAIN LAYOUT */
+/* ---------- MAIN GRID ---------- */
 .main{
+  max-width:1200px;
+  margin:30px auto;
+  padding:0 20px;
   display:grid;
-  grid-template-columns:1.3fr 1fr;
-  min-height:calc(100vh - 76px);
+  grid-template-columns:2fr 1fr;
+  gap:25px;
 }
 
-/* LEFT INFO PANEL */
-.left{
+/* ---------- HERO LEFT ---------- */
+.hero{
   background:
-    linear-gradient(rgba(9,47,89,.88),rgba(9,47,89,.88)),
+    linear-gradient(90deg, rgba(11,60,111,.92), rgba(11,60,111,.75)),
     url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
   background-size:cover;
   background-position:center;
   color:#fff;
-  padding:50px;
+  padding:40px;
+  border-radius:6px;
 }
-.left h1{
+.hero h1{
   margin-top:0;
-  font-size:30px;
+  font-size:28px;
 }
-.left p{
-  font-size:15px;
-  line-height:1.6;
+.hero p{
+  font-size:14.5px;
+  line-height:1.7;
   max-width:520px;
 }
 
-/* RIGHT LOGIN */
-.right{
-  background:var(--gray);
-  padding:40px 30px;
-  display:flex;
-  align-items:flex-start;
-}
+/* ---------- LOGIN CARD ---------- */
 .card{
   background:#fff;
-  width:100%;
-  max-width:420px;
-  padding:28px;
   border-radius:6px;
-  box-shadow:0 4px 18px rgba(0,0,0,.08);
+  padding:24px;
+  box-shadow:0 3px 12px rgba(0,0,0,.1);
 }
 .card h2{
   margin-top:0;
   color:var(--blue);
 }
-
-/* FORM */
 label{
   display:block;
-  margin-top:18px;
+  margin-top:16px;
   font-weight:600;
-  font-size:14px;
+  font-size:13px;
 }
 input{
   width:100%;
-  padding:11px;
+  padding:10px;
   margin-top:6px;
   border:1px solid var(--border);
   font-size:14px;
 }
 button{
-  margin-top:24px;
+  margin-top:22px;
   width:100%;
-  padding:12px;
-  background:var(--blue);
-  color:#fff;
-  border:none;
-  font-size:14px;
+  padding:11px;
+  background:#fff;
+  color:var(--red);
+  border:2px solid var(--red);
+  font-weight:600;
   cursor:pointer;
 }
 button:hover{
-  background:var(--blue-dark);
+  background:var(--red);
+  color:#fff;
 }
 .link{
   display:block;
@@ -129,41 +138,37 @@ button:hover{
   font-size:13px;
   color:var(--blue);
   text-decoration:none;
+  text-align:right;
 }
 
-/* RESULT */
-.hidden{display:none}
-
-.result{
-  padding:40px;
-  max-width:900px;
-  margin:auto;
-}
-.result h2{
-  color:var(--blue);
-}
-.table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:20px;
-}
-.table td{
-  border:1px solid var(--border);
-  padding:10px;
-  font-size:14px;
-}
-
-/* FOOTER NOTE */
-.note{
-  font-size:12px;
-  color:#555;
+/* ---------- PANELS ---------- */
+.panel{
   margin-top:25px;
+  border:1px solid var(--border);
+  border-radius:6px;
 }
+.panel h3{
+  margin:0;
+  padding:12px 15px;
+  background:var(--blue);
+  color:#fff;
+  font-size:15px;
+}
+.panel ul{
+  list-style:none;
+  margin:0;
+  padding:10px 15px;
+}
+.panel li{
+  padding:8px 0;
+  font-size:14px;
+  border-bottom:1px solid var(--border);
+}
+.panel li:last-child{border-bottom:none}
 
-/* RESPONSIVE */
+/* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
   .main{grid-template-columns:1fr}
-  .left{display:none}
 }
 </style>
 </head>
@@ -171,86 +176,76 @@ button:hover{
 <body>
 
 <header>
-  <div class="header-wrap">
-    <div class="logo">CNLU</div>
-    <div class="header-text">
-      <strong>Consortium of National Law Universities</strong><br>
-      <small>CLAT 2026 Result Portal</small>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="logo">C</div>
+      <strong>Consortium of NLUs</strong>
     </div>
+    <nav>
+      <a href="#">Under Graduate</a>
+      <a href="#">Post Graduate</a>
+      <a href="#">Participating Universities</a>
+      <a href="#">Affiliates</a>
+      <a href="#">Help Desk</a>
+      <a href="#">FAQs</a>
+    </nav>
   </div>
 </header>
 
 <div class="main">
 
   <!-- LEFT -->
-  <div class="left">
-    <h1>Welcome to CLAT 2026</h1>
-    <p>
-      The Common Law Admission Test (CLAT) is a national-level entrance
-      examination conducted for admissions to undergraduate and postgraduate
-      law programmes offered by National Law Universities in India.
-    </p>
-    <p>
-      All admissions to the 5-year integrated LL.B. and LL.M. programmes
-      commencing in the Academic Year 2026–27 shall be through CLAT 2026.
-    </p>
+  <div>
+    <div class="hero">
+      <h1>Welcome to CLAT 2026</h1>
+      <p>
+        The Common Law Admission Test (CLAT) is a national level admission test for
+        admissions to undergraduate (UG) and postgraduate (PG) law programmes
+        offered by National Law Universities in India.
+      </p>
+      <p>
+        CLAT is organized by the Consortium of National Law Universities comprising
+        representative universities. All admissions to the 5-year integrated LL.B.
+        and LL.M. programmes commencing in the Academic Year 2026–27 shall be
+        through CLAT 2026.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h3>Notifications</h3>
+      <ul>
+        <li>CLAT 2026 Result</li>
+        <li>Final Answer Key</li>
+        <li>Objections to Question Paper</li>
+      </ul>
+    </div>
   </div>
 
   <!-- RIGHT -->
-  <div class="right">
-
-    <!-- LOGIN -->
-    <div id="login" class="card">
+  <div>
+    <div class="card">
       <h2>Login</h2>
 
-      <label>Application Number</label>
-      <input id="app">
+      <label>Mobile No</label>
+      <input>
 
-      <label>Date of Birth</label>
-      <input type="date" id="dob">
+      <label>Password</label>
+      <input type="password">
 
-      <label>Captcha Code</label>
-      <input placeholder="ABX92">
-
-      <button onclick="login()">LOGIN</button>
-      <a href="#" class="link">Forgot Password?</a>
+      <a class="link" href="#">Forgot Password?</a>
+      <button>LOGIN</button>
     </div>
 
-    <!-- RESULT -->
-    <div id="result" class="card hidden">
-      <h2>CLAT 2026 Result</h2>
-
-      <table class="table">
-        <tr><td><b>Name</b></td><td>Rishab Pandey</td></tr>
-        <tr><td><b>Roll Number</b></td><td>307711087</td></tr>
-        <tr><td><b>Application No</b></td><td>U260116055</td></tr>
-        <tr><td><b>Category</b></td><td>General</td></tr>
-        <tr><td><b>Total Marks</b></td><td><b>58.25</b></td></tr>
-        <tr><td><b>AIR</b></td><td><b>22381</b></td></tr>
-      </table>
-
-      <button onclick="window.print()">Download Scorecard</button>
-
-      <div class="note">
-        Academic UI clone only. No real data is used.
-      </div>
+    <div class="panel">
+      <h3>Important Events</h3>
+      <ul>
+        <li><b>1 Aug 2025</b> – Applications Open</li>
+        <li><b>7 Nov 2025</b> – Last Date to Apply</li>
+      </ul>
     </div>
-
   </div>
-</div>
 
-<script>
-function login(){
-  if(app.value && dob.value){
-    loginBox = document.getElementById("login");
-    resultBox = document.getElementById("result");
-    loginBox.classList.add("hidden");
-    resultBox.classList.remove("hidden");
-  } else {
-    alert("Enter valid details");
-  }
-}
-</script>
+</div>
 
 </body>
 </html>
